@@ -33,29 +33,31 @@ function exemploVariaveisFloat() {
     alert("Total:" + total);
 }
 
-function exemploMercado(){
+function exemploMercado() {
     let produto1Nome = "Cerveja";
     let produto1Quantidade = 12;
-    let produto1Preço = 5.30;
-    let produto1Total = produto1Quantidade * produto1Preço;
-    
-    let produto2Nome = "Amendoim"; //string
-    let produto2Quantidade = 2; //int
-    let produto2Preço = 8.00; //float
-    let produto2Total = produto2Quantidade * produto2Preço;
+    let produto1Preco = 5.30;
+    let produto1Total = produto1Quantidade * produto1Preco;
+
+    let produto2Nome = "Amendoim";
+    let produto2Quantidade = 2;
+    let produto2Preco = 8.00;
+    let produto2Total = produto2Quantidade * produto2Preco;
 
     let totalCompra = produto1Total + produto2Total;
 
     alert(
         "Produto 1: " + produto1Nome +
-        "\nQuantidade:" + produto1Quantidade +
-        "\nPreço Unitário:" + produto1Preco +
-        "\nValor:" + produto1Total +
+        "\nQuantidade: " + produto1Quantidade +
+        "\nPreço Unitário: R$ " + produto1Preco +
+        "\nValor Total: R$ " + produto1Total +
 
         "\n\nProduto 2: " + produto2Nome +
-        "\nQuantidade:" + produto2Quantidade +
-        "\nPreço Unitário:" + produto2Preco +
-        "\nValor:" + produto2Total +
-        "\n\nTotal:" + totalCompra
-    )
+        "\nQuantidade: " + produto2Quantidade +
+        "\nPreço Unitário: R$ " + produto2Preco +
+        "\nValor Total: R$ " + produto2Total +
+
+        "\n\nTotal da Compra: R$ " + totalCompra
+    );
 }
+
