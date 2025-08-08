@@ -1,13 +1,15 @@
-//escopo da variavel slado é global
+// escopo da variável saldo é global
 let saldo = 2000.00;
-function saca() {
-    //escopo da variavel valorSaque é a função sacar
+
+function sacar() {
+    // escopo da variável valorSaque é a função sacar
     const valorSaque = parseFloat(
-        prompt("Digite o valor do saque", "R$")
+        prompt("Digite o valor do saque", "R$ ")
             .replace(",", ".")
             .replace("R$", "")
             .replaceAll(" ", "")
     );
+
     if (valorSaque > saldo) {
         alert("Saldo insuficiente");
     } else {
@@ -18,20 +20,22 @@ function saca() {
         }
     }
 }
+
 function apresentarSaldo() {
     alert("Saldo atual: R$ " + saldo.toFixed(2).replace(".", ","));
 }
 
 function depositar() {
     const valorDeposito = parseFloat(
-        prompt("Digite o valor do deposito", "R$ ")
-        .replace(",", ".")
+        prompt("Digite o valor do depósito", "R$ ")
+            .replace(",", ".")
             .replace("R$", "")
             .replaceAll(" ", "")
     );
+
     if (valorDeposito <= 0) {
-        alert("Valor do déposito não pode ser menor ou igual a R$ 0,00");
-        depositar();//recursão, método que chama ele mesmo(variavel chama ela mesmo dentro dela)
+        alert("Valor do depósito não pode ser menor ou igual a R$ 0,00");
+        depositar(); // recursão, método que chama ele mesmo
     } else {
         saldo = saldo + valorDeposito;
     }
