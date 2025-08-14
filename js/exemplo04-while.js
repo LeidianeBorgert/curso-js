@@ -9,6 +9,7 @@ function exemploWhile() {
 
 }
 
+
 function solicitarDadosAluno() {
     let indice = 0;
 
@@ -20,6 +21,7 @@ function solicitarDadosAluno() {
         indice = indice + 1;
     }
 }
+solicitarDadosAluno()
 
 function solicitarDadosAlunoComNota() {
     const quantidadeDesejada = parseInt(prompt("Digite a quantidade de alunos"));
