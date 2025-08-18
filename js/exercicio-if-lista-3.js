@@ -243,36 +243,286 @@ function validarData() {
 function energiaEletricaFaixa() {
     let consumo = parseFloat(prompt("Informe o consumo em kWh:"));
     let tarifaSocial = prompt("Possui tarifa social? (SIM ou NÃO):").toUpperCase();
-    let precoPorKwh=0;
+    let precoPorKwh = 0;
     let total = 0;
 
-    if(consumo <=0 ){
+    if (consumo <= 0) {
         console.log("Valor invalido")
-    } else if (consumo <= 100){
+    } else if (consumo <= 100) {
         precoPorKwh = 0.60;
-    }else if (consumo <=200){
+    } else if (consumo <= 200) {
         precoPorKwh = 0.75;
-    }else{
+    } else {
         precoPorKwh = 0.90;
-    }if (tarifaSocial === "SIM" && consumo <= 150){
+    } if (tarifaSocial === "SIM" && consumo <= 150) {
         total = 0.85;
     }
     console.log("Total a pagar: R$ " + total.toFixed(2));
 }
 
 
-function meiaEntrada() { }
+function meiaEntrada() {
+    let idade = parseInt(prompt("Informe sua idade:"));
+    let estudante = prompt("Você é estudante? (SIM ou NÃO):").toUpperCase();
+
+    if (isNaN(idade) || idade < 0) {
+        console.log("Idade inválida.");
+        return;
+    }
+    if (idade < 12) {
+        console.log("Paga meia-entrada. Motivo: menor de 12 anos.");
+    } else if (idade >= 60) {
+        console.log("Paga meia-entrada. Motivo: 60 anos ou mais.");
+    } else if (estudante === "SIM") {
+        console.log("Paga meia-entrada. Motivo: estudante.");
+    } else {
+        console.log("Paga entrada inteira. Nenhuma condição de meia-entrada aplicada.");
+    }
+}
 function jogoDeDados() { }
-function estoque() { }
+
+
+function estoque() {
+    let quantidadeEstoque = parseInt(prompt("Informe a quantidade em estoque:"));
+    let estoqueMinimo = parseInt(prompt("Informe o estoque mínimo:"));
+
+    if (isNaN(quantidadeEstoque) || isNaN(estoqueMinimo) || estoqueMinimo < 0) {
+        console.log("Valor Inválido")
+    } if (quantidadeEstoque <= 0) {
+        console.log("Esgotado")
+    } else if (quantidadeEstoque <= estoqueMinimo) {
+        console.log("Crítico")
+    } else if (quantidadeEstoque <= estoqueMinimo * 2) {
+        console.log("Baixo")
+    } else {
+        console.log("OK")
+    }
+}
+
 function contaRestaurante() { }
-function freteDistancia() { }
-function horarioFuncionamento() { }
+function freteDistancia() {
+    let peso = parseFloat(prompt("Informe o peso da carga (kg):"));
+    let distancia = parseFloat(prompt("Informe a distância (km):"));
+
+    if (isNaN(peso) || peso <= 0 || isNaN(distancia) || distancia <= 0) {
+        console.log("Valores inválidos.");
+        return;
+    }
+
+    if (peso > 30) {
+        console.log("Carga não aceita.");
+        return;
+    }
+
+    let baseFrete = 0;
+
+    if (peso <= 2) {
+        baseFrete = 12;
+    } else if (peso <= 10) {
+        baseFrete = 25;
+    } else {
+        baseFrete = 40;
+    }
+
+    let adicional = 0;
+
+    if (distancia <= 100) {
+        adicional = 0;
+    } else if (distancia <= 500) {
+        adicional = 15;
+    } else {
+        adicional = 30;
+    }
+
+    let total = baseFrete + adicional;
+    console.log("Valor do frete: R$ " + total.toFixed(2));
+}
+
+function horarioFuncionamento() {
+    let dia = parseInt(prompt("Informe o dia da semana (1=Dom, 2=Seg ... 7=Sáb):"));
+    let hora = parseInt(prompt("Informe a hora (0 a 23):"));
+    let feriado = prompt("Hoje é feriado? (SIM ou NÃO):").toUpperCase();
+
+    if (
+        isNaN(dia) || dia < 1 || dia > 7 ||
+        isNaN(hora) || hora < 0 || hora > 23 ||
+        (feriado !== "SIM" && feriado !== "NÃO")
+    ) {
+        console.log("Dados inválidos.");
+        return;
+    }
+
+    if (dia === 1) {
+        console.log("Fechado (domingo).");
+        return;
+    }
+
+    if (feriado === "SIM" && dia >= 2 && dia <= 6) {
+        console.log("Fechado (feriado em dia útil).");
+        return;
+    }
+
+    if (dia >= 2 && dia <= 6) { // Segunda a sexta
+        if (hora >= 9 && hora < 18) {
+            console.log("Aberto.");
+        } else {
+            console.log("Fechado (fora do horário).");
+        }
+    } else if (dia === 7) { // Sábado
+        if (hora >= 9 && hora < 13) {
+            console.log("Aberto.");
+        } else {
+            console.log("Fechado (fora do horário).");
+        }
+    } else {
+        console.log("Dia inválido.");
+    }
+}
+
 function validacaoNotas() { }
-function credencialAcesso() { }
-function simuladorCombustivel() { }
-function validacaoSenha() { }
-function classificacaoTemperatura() { }
-function validacaoHorarioProva() { }
-function seguroVeiculo() { }
+function credencialAcesso() {
+    let perfil = parseInt(prompt("Informe o perfil (1=Usuário, 2=Gestor, 3=Admin):"));
+    let chave = parseInt(prompt("Informe a chave de segurança (número):"));
+
+    if (isNaN(perfil) || isNaN(chave)) {
+        console.log("Dados inválidos.");
+        return;
+    }
+
+    if (perfil === 1) {
+        console.log("Acesso concedido: Usuário (acesso básico).");
+
+    } else if (perfil === 2) {
+        if (chave % 2 === 0) {
+            console.log("Acesso concedido: Gestor.");
+        } else {
+            console.log("Acesso negado: chave deve ser PAR para gestor.");
+        }
+
+    } else if (perfil === 3) {
+        if (chave > 100 && chave % 5 === 0) {
+            console.log("Acesso concedido: Administrador.");
+        } else {
+            console.log("Acesso negado: chave deve ser múltipla de 5 e maior que 100 para admin.");
+        }
+
+    } else {
+        console.log("Perfil inválido.");
+    }
+}
+ 
+function simuladorCombustivel() {
+
+    let precoEtanol = parseFloat(prompt("Informe o preço do etanol:"));
+    let precoGasolina = parseFloat(prompt("Informe o preço da gasolina:"));
+
+    if (isNaN(precoEtanol) || precoEtanol <= 0 || isNaN(precoGasolina) || precoGasolina <= 0) {
+        console.log("Preços inválidos.");
+        return;
+    }
+
+    let razao = precoEtanol / precoGasolina;
+
+    console.log("Razão etanol/gasolina: " + razao.toFixed(2));
+
+    if (razao <= 0.7) {
+        console.log("Compensa usar ETANOL.");
+    } else {
+        console.log("Compensa usar GASOLINA.");
+    }
+}
+
+function validacaoSenha() {
+    let senha = prompt("Digite a senha:");
+    let confirmacao = prompt("Confirme a senha:");
+
+    if (!senha || !confirmacao) {
+        console.log("Senha inválida.");
+    } else if (senha !== confirmacao) {
+        console.log("Senhas não coincidem.");
+    } else if (senha.length < 6) {
+        console.log("Senha fraca (mínimo 6).");
+    } else {
+        console.log("Senha cadastrada.");
+    }
+}
+
+function classificacaoTemperatura() {
+    function classificarTemperatura() {
+        let temperatura = parseFloat(prompt("Informe a temperatura em °C:"));
+
+        if (isNaN(temperatura)) {
+            console.log("Temperatura inválida.");
+            return;
+        }
+
+        if (temperatura < 0) {
+            console.log("Congelante");
+        } else if (temperatura <= 14) {
+            console.log("Frio");
+        } else if (temperatura <= 25) {
+            console.log("Agradável");
+        } else if (temperatura <= 35) {
+            console.log("Quente");
+        } else {
+            console.log("Muito quente");
+        }
+    }
+}
+function validacaoHorarioProva() {
+    let horaEntrada = parseInt(prompt("Informe a hora de entrada (0 a 23):"));
+    let tempoProva = parseInt(prompt("Informe o tempo de prova em minutos:"));
+
+    if (
+        isNaN(horaEntrada) || horaEntrada < 0 || horaEntrada > 23 ||
+        isNaN(tempoProva) || tempoProva <= 0
+    ) {
+        console.log("Dados inválidos.");
+        return;
+    }
+
+    if (horaEntrada < 8 || horaEntrada > 10) {
+        console.log("Entrada não permitida.");
+    } else if (horaEntrada === 10) {
+        if (tempoProva <= 120) {
+            console.log("Prova permitida.");
+        } else {
+            console.log("Tempo excedido. Prova não permitida.");
+        }
+    } else {
+        // Entrou entre 8h e 9h
+        console.log("Prova permitida.");
+    }
+}
+
+function seguroVeiculo() {
+    let idade = parseInt(prompt("Informe sua idade:"));
+    let anosCnh = parseInt(prompt("Quantos anos você tem de CNH?"));
+    let sinistro = prompt("Houve sinistro nos últimos 12 meses? (SIM ou NÃO):").toUpperCase();
+
+    // Validação básica
+    if (
+        isNaN(idade) || idade < 0 ||
+        isNaN(anosCnh) || anosCnh < 0 ||
+        (sinistro !== "SIM" && sinistro !== "NÃO")
+    ) {
+        console.log("Dados inválidos.");
+        return;
+    }
+
+    // Verifica elegibilidade
+    if (idade >= 21 && anosCnh >= 2 && sinistro === "NÃO") {
+        let franquia = 1500;
+
+        if (idade < 25 || anosCnh < 3) {
+            franquia *= 1.2;  // aplica 20% de acréscimo
+        }
+
+        console.log("Condutor elegível ao seguro.");
+        console.log("Franquia: R$ " + franquia.toFixed(2));
+    } else {
+        console.log("Condutor não elegível ao seguro.");
+    }
+}
 
 
