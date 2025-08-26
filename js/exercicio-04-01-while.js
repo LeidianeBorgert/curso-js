@@ -293,14 +293,14 @@ function nomeComSlipt() {
         let nomeCompleto = prompt("Informe o nome completo: ").trim();
         let partes = nomeCompleto.split(" ");
         let primeiroNome = partes[0];
-    
-        let letras = primeiroNome.substring(0,3);
 
-        listaNomes += primeiroNome.trim() + "| as 3 primeiras letras: " + letras + "\n";
+        let letras = primeiroNome.substring(0, 3);
+
+        listaNomes = listaNomes + primeiroNome + "| as 3 primeiras letras: " + letras + "\n";
         indice = indice + 1;
     }
 
     alert("Primeiro Nome: " + listaNomes);
-   
+
 
 }
