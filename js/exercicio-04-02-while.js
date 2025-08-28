@@ -1,4 +1,4 @@
-function sistemasCompras() {
+function exercicio01() {
     /**1) Sistema de compras com preço BR + relatório
 Objetivo: cadastrar produtos até o usuário parar, limpar preço no formato BR e gerar um pequeno relatório.
 
@@ -63,7 +63,7 @@ Batata Palha | R$ 12,50 · Arroz 5kg | 29,90 · Leite | R$ 4,79 */
 
 }
 
-function processarLinhas() {
+function exercicio02() {
     /**2) Processar linhas “CSV” simples (id;nome;cpf;data)
 Objetivo: ler 5 linhas e validar campos por regras básicas de string.
 
@@ -131,12 +131,49 @@ Dica: Evite regex complexa; use length, substring, charAt, replace. */
 
     }
 
-    /*alert("Id invalidos: " + idInvalido +
+    console.log("Id invalidos: " + idInvalido +
         "\nNomes invalidos: " + nomeInvalido +
         "\nCpfs invalidos: " + cpfInvalido +
         "\nData invalida: " + dataInvalida +
-        "\nTotal de validos: " + valido)**/
+        "\nTotal de validos: " + valido)
 
 
 }
-processarLinhas()
+function exercicio03() {
+    /**3) Frases: contagem e classificação por pontuação
+Objetivo: ler 6 frases e classificar por final ?, ! ou outro.
+
+Repita 6x: leia uma frase, faça trimEnd() e pegue o último caractere com substring(len-1).
+
+Contadores: perguntas (terminam com ?), exclamações (!) e neutras (qualquer outro).
+
+Ao final, mostre os três totais e o percentual de cada (use toFixed(1)).
+
+Massa de dados:
+“Oi?” · “Tudo bem!” · “Amanhã eu vou” · “Sério!” · “Como assim?” · “Tá certo” */
+
+    let indice = 0;
+    let terminamInterrogacao = 0;
+    let terminamExclamacao = 0;
+    let terminamNeutras = 0;
+
+    while (indice < 3) {
+        let frase = prompt("Informe uma frase, podendo utilizar ? ou !. ");
+
+
+        if (frase.trimEnd().substring("?") ) {
+            terminamInterrogacao = terminamInterrogacao + 1;
+        }
+        if (frase.trimEnd("!")) {
+    //        terminamExclamacao = terminamExclamacao + 1;
+     //   } else {
+      //      terminamNeutras = terminamNeutras + 1;
+      //  }
+        indice = indice + 1;
+    }
+    alert(
+        "Quantidade de frases que terminam com ? : " + terminamInterrogacao +
+        "\nQuantidade de frases que terminam com ! : " + terminamExclamacao +
+        "\nQuantidade de frases que tem terminação neutra: " + terminamNeutras)
+
+}
