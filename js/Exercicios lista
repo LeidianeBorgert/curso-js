@@ -1,0 +1,61 @@
+// Gerar listas com os dados dos livros.
+// Listas: titulos, anosDePublicacao, editoras, numerosDePaginas, precos e categorias.
+// Massa de dados: Preencher as listas com 7 livros de categorias diversificadas (Ficção, Romance, Financeiro, Tecnologia)
+// Criar o método que permite cadastrar novo livro
+// Criar os seguintes métodos:
+// - Listar todos os livros da categoria Ficção
+// - Listar todos os livros publicados a partir do ano 2010
+// - Listar todos os livros de uma determinada editora (entrada via prompt)
+// - Listar todos os livros com mais de 300 páginas
+// - Listar o livro com maior número de páginas
+// - Listar o livro com menor número de páginas
+// - Listar a média de páginas dos livros cadastrados
+// - Listar todos os livros cujo título possua mais de 30 caracteres
+// - Listar o livro mais caro
+// - Listar o livro mais barato
+// - Criar uma lista com os títulos e preços dos livros da categoria Tecnologia
+// - Criar uma lista com os títulos e anos de publicação dos livros da categoria Romance
+// - Listar todos os livros cujo título possua a palavra "JavaScript"
+
+
+Exercício 02
+
+// Gerar listas com os dados das músicas.
+// Listas: titulos, anosDeLancamento, artistas, albuns, duracoesEmSegundos e generos.
+// Massa de dados: Preencher as listas com 7 músicas de gêneros variados (Pop, Rock, Sertanejo, MPB, Rap).
+// Criar o método que permite cadastrar nova música
+// Criar os seguintes métodos:
+// - Listar todas as músicas lançadas antes de 2000
+// - Listar todas as músicas de um determinado artista (entrada via prompt)
+// - Listar a música mais longa
+// - Listar a música mais curta
+// - Calcular a duração média das músicas cadastradas
+// - Listar todas as músicas do gênero Rock
+// - Listar todas as músicas cujo título tenha mais de 25 caracteres
+// - Listar o álbum que possui a maior quantidade de músicas cadastradas
+// - Criar uma lista com os títulos e artistas das músicas de MPB
+// - Criar uma lista com os títulos e anos de lançamento das músicas de Rap
+// - Listar todas as músicas cujo título contenha a palavra "Amor"
+
+// - Criar uma lista com os títulos e anos de lançamento dos jogos do gênero Esporte
+// - Listar todos os jogos cujo título possua a palavra "Mario"
+
+
+Exercício 03
+// Gerar listas com os dados dos restaurantes.
+// Listas: nomes, anosDeAbertura, cidades, tiposDeCulinaria, numerosDeMesas, precosMedios.
+// Massa de dados: Preencher as listas com 7 restaurantes de culinárias variadas (Italiana, Japonesa, Brasileira, Mexicana).
+// Criar o método que permite cadastrar novo restaurante
+// Criar os seguintes métodos:
+// - Listar todos os restaurantes da cidade de São Paulo
+// - Listar todos os restaurantes abertos após 2010
+// - Listar todos os restaurantes de uma determinada culinária (entrada via prompt)
+// - Listar todos os restaurantes com mais de 40 mesas
+// - Listar o restaurante com maior número de mesas
+// - Listar o restaurante com menor preço médio
+// - Calcular o preço médio geral dos restaurantes cadastrados
+// - Listar todos os restaurantes cujo nome possua mais de 20 caracteres
+// - Listar o restaurante mais caro
+// - Criar uma lista com nomes e anos de abertura dos restaurantes japoneses
+// - Criar uma lista com nomes e preços médios dos restaurantes italianos
+// - Listar todos os restaurantes cujo nome contenha a palavra "Grill"
